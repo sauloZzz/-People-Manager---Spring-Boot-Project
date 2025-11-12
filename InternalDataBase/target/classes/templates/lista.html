@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Lista de Personas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+<div class="container">
+    <h3>Lista de Personas</h3>
+    <a th:href="@{/}" class="btn btn-success mb-3">Agregar nueva</a>
+
+    <table class="table table-striped">
+        <thead><tr><th>Nombre</th><th>Apellido</th><th>Edad</th><th>Género</th></tr></thead>
+        <tbody>
+        <tr th:each="p : ${personas}">
+            <td th:text="${p.nombre}"></td>
+            <td th:text="${p.apellido}"></td>
+            <td th:text="${p.edad}"></td>
+            <td th:text="${p.genero}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
